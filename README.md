@@ -1,2 +1,2 @@
 # firstproject
-my first intership project
+my first internship project
