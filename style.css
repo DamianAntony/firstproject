@@ -1,0 +1,586 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+
+
+
+.main {
+
+  margin: 0px;
+  /* border: 2px solid black; */
+  height: 100vh;
+  overflow: hidden;
+
+}
+
+/* navbarstyling */
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  /* will inherit the color from navbar */
+
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+
+.navbar {
+  background-color: transparent;
+  border: 2px solid tranparent;
+  width: 100%;
+  height: 86px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px 10px;
+  top: 0px;
+  transition: background-color 0.3s;
+  position: fixed;
+  z-index: 1000;
+  color: white;
+
+}
+
+.navbar.scrolled {
+  background-color: white;
+
+
+}
+
+.navbar.scrolled a,
+.navbar.scrolled .svg-icon {
+  color: black;
+  /*Text color when navbar is scrolled*/
+}
+
+
+
+.navbar a:hover {
+  color: blue;
+  transition: all .3s ease;
+
+}
+
+.svg-icon path {
+  /* Default color */
+  transition: fill 0.3s ease;
+  fill: currentColor;
+  /* svg will inherit the color of text */
+  /* Smooth transition */
+}
+
+.svg-icon:hover path {
+  fill: blue;
+  cursor: pointer;
+  /* Color on hover */
+
+}
+
+.bgimg {
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100%;
+
+
+}
+
+.bg-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  color: white;
+  top: 30vh;
+  left: 50px;
+
+
+}
+
+.bg-text .buy {
+
+  margin-top: 40px;
+  font-size: 20px;
+  margin-left: 10px;
+
+}
+
+.bg-text h1 {
+
+  font-size: 50px;
+
+}
+
+.bg-text h3 {
+  font-size: 30px;
+}
+
+.buy i {
+  color: white;
+}
+
+.buy p:hover {
+  transition: all .3s ease-in-out;
+  color: blue;
+  animation: grow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  cursor: pointer;
+
+}
+
+.buy i:hover {
+
+  color: blue;
+  animation: grow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  cursor: pointer;
+
+}
+
+.buy {
+  display: flex;
+  align-items: center;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 45vw;
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  animation: fadein;
+  animation-duration: 1s;
+  animation-direction: running;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+
+}
+
+.contact-us {
+
+  position: fixed;
+  z-index: 2;
+  bottom: 120px;
+  right: 30px;
+  border: 1px solid transparent;
+  width: 60px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 3px;
+  background-color: hsl(240, 61%, 55%);
+}
+
+/* animation for buy now */
+@keyframes fadein {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes grow {
+  100% {
+    transform: scaleX(1.2);
+  }
+}
+
+/* Section Styling */
+.section-box {
+
+
+  /* border: 2px solid black; */
+  height: 90vh;
+  padding: 80px;
+  position: relative;
+}
+
+.box1 {
+  position: absolute;
+  right: 50px;
+  left: 50px;
+  bottom: 50px;
+  top: 50px;
+  padding-top: 5px;
+  margin: auto;
+  /* border: 3px solid black; */
+  border-radius: 20px;
+  overflow: hidden;
+  /* overflow hidden is used to make the animation inside the div */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 5px;
+
+}
+
+.box1 img {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+}
+
+.box1 img:hover {
+  animation: anime;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  background-position: center center;
+}
+
+@keyframes anime {
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+}
+
+
+/** Section Content **/
+.box-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 100px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  animation: fade;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+
+
+
+}
+
+@keyframes fade {
+
+  50% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.sec-buy {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-buy p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sec-buy i {
+  color: black;
+
+}
+
+.sec-buy h1 {
+
+  font-size: 60px;
+  font-weight: 900;
+
+
+}
+
+.sec-buy h3 {
+  font-size: 30px;
+  font-weight: 300;
+
+}
+
+.sec-buy:hover {
+  color: blue;
+  animation: grow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  cursor: pointer;
+}
+
+.sec2 img {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+/* Section Discover */
+.discover {
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  position:relative;
+
+}
+
+.main-container {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.2fr .8fr 1.2fr;
+  grid-template-areas:
+    "img1 img2 img3"
+    "img4 img2 img3"
+    "img4 img2 img5";
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.main-container .img {
+  border: 1px solid transparent;
+}
+
+.img1 {
+  width: 320px;
+  height: 270px;
+  grid-area: img1;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-left: 20px;
+
+  background-color: white;
+}
+
+.img2 {
+  grid-area: img2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+
+  background-color: white;
+
+}
+
+.img3 {
+  grid-area: img3;
+  width: 320px;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.img4 {
+  grid-area: img4;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-left: 20px;
+
+  background-color: white;
+}
+
+.img5 {
+  grid-area: img5;
+  width: 320px;
+  height: 270px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+
+  background-color: white;
+}
+
+/* IMAGE FITTING IN GRID */
+.img1 img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img2 img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img3 img {
+  height: 70%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img4 img {
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img5 img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-container img:hover {
+  animation: anime;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.discover h1 {
+  padding: 40px;
+  font-size: 45px;
+  z-index: 1;
+  display:block;
+  font-weight: lighter;
+  position: relative;
+  left: -300px;
+}
+
+/* Discover img text styling */
+.img1-text {
+  position: relative;
+  left: 40px;
+  bottom: 100px;
+  font-weight: lighter;
+}
+
+.img2-text {
+  position: relative;
+  left: 40px;
+  bottom: 80px;
+  color: white;
+  font-weight: lighter;
+}
+
+.img3-text {
+  position: relative;
+  left: 40px;
+  margin-top: 50px;
+  font-weight: lighter;
+
+}
+
+.img4-text {
+  position: relative;
+  left: 40px;
+  margin-top: 50px;
+  font-weight: lighter;
+
+}
+
+.img5-text {
+  position: relative;
+  left: 40px;
+  bottom: 80px;
+  color: white;
+  font-weight: lighter;
+}
+
+/* Footer Styling */
+footer{
+  display:flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 80px;
+  background-color: hsl(220, 17%, 17%);
+}
+.footer-content{
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.footer-bottom{
+  height: 76px;
+  border-width: 1px;
+  border-style: solid;
+  border-color:hsl(0, 0%, 66%) transparent transparent transparent ;
+  margin:0 80px;
+  
+}
+
+.footer-content h3{
+  color:hsl(0, 0%, 100%);
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+ 
+}
+.footer-content a{
+  text-decoration: none;
+  color:hsl(0, 0%, 65%);
+  font-size: 14px;
+  font-weight: lighter;
+  display: inline-block;
+  margin: 10px 0px;
+
+}
+
+/* contact info styling */
+.contact-info a{
+  display:block;
+
+}
+.footer-content dl a:hover{
+  color:blue;
+  transition:color 0.3s ease-in;
+}
+.footer-bottom{
+  font-size: 12px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color:hsl(0, 0%, 65%);
+  
+}
+.footer-bottom span{
+  display: block;
+}
+
+
+/* Responsive Css */
+/* @media screen and( max-width:1140px  ) {
+  .main-container {
+    
+    background-position: center center;
+    position:absolute;
+    grid-template-columns: repeat(autofit,minmax(250px,1fr));
+    padding-right: 10px;
+    
+  }
+  
+} */
